@@ -351,7 +351,7 @@ npf_config_destroy(nl_config_t *ncf)
  * PARAMETERS.
  */
 
-int
+/*int
 npf_param_get(nl_config_t *ncf, const char *name, int *valp)
 {
 	const nvlist_t *params;
@@ -369,24 +369,24 @@ npf_param_set(nl_config_t *ncf, const char *name, int val)
 {
 	nvlist_t *params;
 
-	/* Ensure params dictionary. */
+//	 Ensure params dictionary. 
 	if (nvlist_exists(ncf->ncf_dict, "params")) {
 		params = nvlist_take_nvlist(ncf->ncf_dict, "params");
 	} else {
 		params = nvlist_create(0);
 	}
 
-	/*
-	 * If the parameter is already set, then free it first.
-	 * Set the parameter.  Note: values can be negative.
-	 */
+	
+//	 * If the parameter is already set, then free it first.
+//	 * Set the parameter.  Note: values can be negative.
+	 
 	if (nvlist_exists(params, name)) {
 		nvlist_free_number(params, name);
 	}
 	nvlist_add_number(params, name, (uint64_t)val);
 	nvlist_add_nvlist(ncf->ncf_dict, "params", params);
 	return 0;
-}
+}*/
 
 /*
  * DYNAMIC RULESET INTERFACE.
